@@ -1,7 +1,38 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@ 
+avatar721
+/
+Neurosis Deauther
+18
+30363
+Code
+Issues
+3
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Neurosis Deauther/install.sh
+@avatar721
+avatar721 Update install.sh
+Latest commit 0e746fa on Feb 13, 2020
+ History
+ 1 contributor
+Executable File  92 lines (82 sloc)  2.55 KB
+  
 #!/bin/bash
 
-# The installer for the Kawaii Deauther package
-# Kawaii Deauther is made with <3 by Arya Narotama - 2020
+# The installer for the Neurosis Deauther package
+# Neurosis Deauther is made with <3 by aryan (Neurosis) @CKS  - 2020
 
 ### Colors ###
 BK=$(tput setaf 0) # Black
@@ -18,13 +49,12 @@ BG=$(tput setab 4) # Background Color
 function banner () {
 	printf "${BD}
 ${GR}┊┊                  ${WH}╭━━━━━━
-${GR}┊┊┊┊${YW}╭━╱▔▔▔╲━╮${GR}┊┊${YW}☼   ${WH}╭╯${RD}Kawaii
+${GR}┊┊┊┊${YW}╭━╱▔▔▔╲━╮${GR}┊┊${YW}☼   ${WH}╭╯${RD}Neurosis
 ${GR}┊╱╲┊${YW}╰▏▆┊┊┊▇▕╯${GR}╱╲┊   ${WH}┃${RD}DEAUTHER
 ${GR}▔▔▔▔▔${YW}▏┊┊▇┊┊▕${GR}▔▔▔▔   ${WH}╰┳━━━━━━
 ${GR}┈${YW}╱▔▔╱┊┊━┻━┊┊╲▔▔╲  ${WH}━━╯${YW}
 ${GR}┈${YW}╲▂╱╭━━╮┊╭━━╮╲▂╱
-${GR}┈┈${YW}▔▔╰┻┻╯▔╰┻┻╯▔▔${GR}┈┈ ${RD}© 4WSec - 2020
-
+${GR}┈┈${YW}▔▔╰┻┻╯▔╰┻┻╯▔▔${GR}┈┈ ${RD}© aryanwahid9 - 2020
 "
 }
 
@@ -33,7 +63,7 @@ function chk_root () {
 	if [[ "$(id -u)" -ne 0 ]]; then
 		clear
 		banner
-		printf " ${BD}${WH}[${RD}!${WH}] ${RD}KawaiiDeauther must be run as root ${YW}｡ﾟ･（>﹏<）･ﾟ｡\n"
+		printf " ${BD}${WH}[${RD}!${WH}] ${RD}Neurosis Deauther must be run as root ${YW}｡ﾟ･（>﹏<）･ﾟ｡\n"
 		exit 1
 	fi
 }
@@ -48,7 +78,7 @@ function checking_dependencies () {
 		printf " ${BD}${WH}[${RD}!${WH}] ${CY}Checking Guns ${WH}..........\n"
 		echo ""
 		touch dependencies.conf
-		echo "# 4WSec Just Dropped Yo Wireless" >> dependencies.conf
+		echo "# aryan Just Dropped Yo Wireless" >> dependencies.conf
 		sleep 1
 
 		# Checking MDK3
